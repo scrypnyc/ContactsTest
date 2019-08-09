@@ -35,11 +35,13 @@ struct ContactModel {
         return ""
     }
     
+    
     var dbModel: Any?
     
     init() {
         
     }
+    
     
     init(contactMO: ContactMO) {
         self.firstName = contactMO.firstName
@@ -58,6 +60,7 @@ struct ContactModel {
         self.dbModel = contactMO
     }
     
+    
     func isValidContact() -> Bool {
         let phoneNameNilCount = phone.filter { phoneModel in phoneModel.name == nil }.count
         let emailNameNilCount = email.filter { emailModel in emailModel.email == nil }.count
@@ -75,6 +78,7 @@ struct ContactModel {
     }
     
 }
+
 
 extension ContactModel: Equatable {
 

@@ -14,6 +14,7 @@ protocol ContactListProtocol: class {
     func reloadData()
 }
 
+
 class ContactListViewModel {
     
     var databaseManager: DatabaseManager
@@ -26,6 +27,7 @@ class ContactListViewModel {
     init(databaseManager: DatabaseManager) {
         self.databaseManager = databaseManager
     }
+    
     
     private func fetchContacts() {
         do {
@@ -50,17 +52,19 @@ class ContactListViewModel {
                 
             })
             
+            
             sectionTitles = contactDictionary.keys.sorted()
         } catch let error {
             print("Error in fetching contacts: \(error)")
         }
-        
     }
+    
     
     internal func viewWillAppear() {
         fetchContacts()
         delegate?.reloadData()
     }
+    
     
     internal func rowSelectedAtIndexPath(_ indexPath: IndexPath) {
         let sectionKey = sectionTitles[indexPath.section]
@@ -70,8 +74,8 @@ class ContactListViewModel {
         }
     }
     
+    
     @objc internal func plusBarButtonAction() {
         delegate?.openAddContactScreen()
     }
-    
 }

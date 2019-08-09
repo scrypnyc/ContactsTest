@@ -11,10 +11,12 @@ protocol ContactInfoTypeNameProtocol {
     var name: String { get }
 }
 
+
 enum ContactInfoType {
     case phone
     case email
 }
+
 
 enum PhoneTypes: String, ContactInfoTypeNameProtocol {
     case home
@@ -28,6 +30,7 @@ enum PhoneTypes: String, ContactInfoTypeNameProtocol {
     
 }
 
+
 enum EmailTypes: String, ContactInfoTypeNameProtocol {
     case home
     case work
@@ -37,6 +40,7 @@ enum EmailTypes: String, ContactInfoTypeNameProtocol {
         return rawValue
     }
 }
+
 
 struct CustomContactInfoTypeName: ContactInfoTypeNameProtocol {
     var name: String
