@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Contact" representedClassName="ContactMO" syncable="YES">
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="emailAddresses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Email" syncable="YES"/>
+        <relationship name="phoneNumbers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Phone" syncable="YES"/>
+    </entity>
+    <entity name="Email" representedClassName="EmailAddressMO" syncable="YES">
+        <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Phone" representedClassName="PhoneNumberMO" syncable="YES">
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Phone" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Email" positionX="-54" positionY="9" width="128" height="75"/>
+        <element name="Contact" positionX="-36" positionY="27" width="128" height="120"/>
+    </elements>
+</model>
