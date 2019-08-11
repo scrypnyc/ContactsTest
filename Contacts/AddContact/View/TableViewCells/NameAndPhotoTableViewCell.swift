@@ -14,12 +14,16 @@ class NameAndPhotoTableViewCell: UITableViewCell {
     private var lastNameView = LineTextfieldView(placeholder: nil)
     private var companyNameView = LineTextfieldView(placeholder: nil)
     
+    enum Constants {
+        static let numberOfLines: Int = 2
+    }
+    
     lazy private var imageButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
         button.setTitle("add photo", for: UIControl.State())
-        button.titleLabel?.numberOfLines = 2
+        button.titleLabel?.numberOfLines = Constants.numberOfLines
         button.titleLabel?.textAlignment = .center
         button.setBackgroundImage(#imageLiteral(resourceName: "profilePlaceholder"), for: UIControl.State())
         return button
